@@ -5,11 +5,8 @@ from discord import opus
 import random
 import os
 
-# Попытка загрузки библиотеки Opus
 if not opus.is_loaded():
-    opus.load_opus(
-        "libopus.so"
-    )  # Укажите путь к библиотеке Opus (Replit автоматически подгрузит её)
+    opus.load_opus(opus._default_opus_library_path)
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Получаем токен из переменной окружения
 
