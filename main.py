@@ -6,7 +6,7 @@ import random
 import os
 
 if not opus.is_loaded():
-    opus.load_opus(opus._default_opus_library_path)
+    opus.load_opus("libopus.so")  # Railway автоматически находит библиотеку Opus
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Получаем токен из переменной окружения
 
