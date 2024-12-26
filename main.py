@@ -9,6 +9,8 @@ if not opus.is_loaded():
     print("Opus не загружен. Убедитесь, что библиотека Opus установлена.")
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Получаем токен из переменной окружения
+if TOKEN is None:
+    raise ValueError("Токен бота отсутствует! Проверьте переменные окружения.")
 
 # Глобальный путь к звуковым файлам
 SOUND_PATH = "sounds/"  # Папка, где хранятся звуковые файлы
